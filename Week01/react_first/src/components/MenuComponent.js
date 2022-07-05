@@ -17,13 +17,23 @@ class Menu extends Component {
     renderDish(dish) {
       if (dish != null) {
         return(
-          <Card>
-            <CardImg width="100%" src={dish.image} alt={dish.name} />
+          <div className='onClickPart wrapper'>
+          <Card style={{ width: '25rem', border: "solid" }}>
+            <CardImg width="100%" variant="top" src={dish.image} alt={dish.name} />
             <CardBody>
               <CardTitle>{dish.name}</CardTitle>
               <CardText>{dish.description}</CardText>
             </CardBody>
           </Card>
+
+          <Card style={{ width: '25rem', border: "solid" }}>
+            <CardBody>
+              <CardTitle>{<p>Comments</p>}</CardTitle>
+              <CardText>{dish.comments[0].comment}</CardText>
+              <CardText>--{dish.comments[0].author}, {dish.comments[0].date} </CardText>
+            </CardBody>
+          </Card>
+          </div>
         );
       } else {
         return(
@@ -35,9 +45,9 @@ class Menu extends Component {
     render() {
         const menu = this.props.dishes.map((dish) => {
             return (
-              <div key={dish.id} className="col-md-5 m-1">
+              <div key={dish.id}>
                 <Card onClick={() => this.onDishSelect(dish) }>
-                    <CardImg width="40%" src={dish.image} alt={dish.name} />
+                    <CardImg width="50%" src={dish.image} alt={dish.name} />
                     <CardImgOverlay>
                     <CardTitle>{dish.name}</CardTitle>
                   </CardImgOverlay>
@@ -47,11 +57,11 @@ class Menu extends Component {
         });
 
         return (
-          <div className="container">
-            <div className="row">
+          <div>
+            <div className='menuPart'>
               {menu}
             </div>
-            <div className="row">
+            <div>
               {this.renderDish(this.state.selectedDish)}
             </div>
           </div>

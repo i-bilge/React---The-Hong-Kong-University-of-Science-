@@ -1,14 +1,24 @@
 .wrapper {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
-.nav {
+.menuPart {
     background-color: rgb(142, 44, 44);
     flex:2;
     text-align: center;
     color: aliceblue;
 }
-.main {
-    background-color: blue;
-    flex:1
+.onClickPart{
+    background-color: rgb(142, 44, 44);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+   
+}
+.nav{
+   background: gray;
+   text-align: center;
+   color: azure;
 }

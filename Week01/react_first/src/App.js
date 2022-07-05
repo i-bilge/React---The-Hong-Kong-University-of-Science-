@@ -1,19 +1,10 @@
 import React, { Component } from 'react';
-import './App.css';
-import Menu from './components/MenuComponent';
+import './App.css'; //Here comes my styling
+import {DISHES} from './shared/dishes'; //Here is my data
+//And then comes my components to UI:
+import Menu from './components/MenuComponent'; 
 import Navbar from './components/Navbar';
-import {DISHES} from './shared/dishes';
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <Navbar/>
-//       <Menu/>
-//     </div>
-//   );
-// }
-
-// export default App;
 
 class App extends Component {
    constructor(props) {
@@ -24,11 +15,11 @@ class App extends Component {
   }
   render() {
     return (
-      <div className='container'>
-        <div className='row col-12'>
+      <div>
+        <div className='nav'>
           <Navbar/>
         </div>
-        <div className='nav'>
+        <div>
          <Menu dishes={this.state.dishes} />
         </div>
       </div>
