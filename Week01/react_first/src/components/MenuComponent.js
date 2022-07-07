@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 'reactstrap';
 import '../App.css'
+import DishDetail from './DishdetailComponent ';
 
 class Menu extends Component {
     constructor(props) {
@@ -9,7 +10,7 @@ class Menu extends Component {
           selectedDish: null
         };
     }
-    //Here we hawe to use setState to change state of selectDish and work with onClick:
+    //Here we have to use setState to change state of selectDish and work with onClick:
     onDishSelect(dish){
       this.setState({ selectedDish: dish });
     }
@@ -17,23 +18,7 @@ class Menu extends Component {
     renderDish(dish) {
       if (dish != null) {
         return(
-          <div className='onClickPart wrapper'>
-          <Card style={{ width: '25rem', border: "solid" }}>
-            <CardImg width="100%" variant="top" src={dish.image} alt={dish.name} />
-            <CardBody>
-              <CardTitle>{dish.name}</CardTitle>
-              <CardText>{dish.description}</CardText>
-            </CardBody>
-          </Card>
-
-          <Card style={{ width: '25rem', border: "solid" }}>
-            <CardBody>
-              <CardTitle>{<p>Comments</p>}</CardTitle>
-              <CardText>{dish.comments[0].comment}</CardText>
-              <CardText>--{dish.comments[0].author}, {dish.comments[0].date} </CardText>
-            </CardBody>
-          </Card>
-          </div>
+          <DishDetail dish={dish}/>
         );
       } else {
         return(
@@ -62,7 +47,9 @@ class Menu extends Component {
               {menu}
             </div>
             <div>
+              {/* <DishDetail dish/> */}
               {this.renderDish(this.state.selectedDish)}
+              {/* this yerine DishDetail */}
             </div>
           </div>
         );
