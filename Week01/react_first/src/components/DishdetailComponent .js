@@ -1,5 +1,5 @@
 import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
-import '../App.css'
+import '../App.scss'
 
 const DishDetail = ({dish})=>{
   //Here i can also use it like "props" then use it like "props.dish".

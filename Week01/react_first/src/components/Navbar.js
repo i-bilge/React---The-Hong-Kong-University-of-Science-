@@ -2,6 +2,9 @@ import React from 'react'
 
 export default function Navbar() {
   return (
-    <p>RISTORANTE</p>
+    <div className='Navbar'>
+      <p className='navbarP'>RISTORANTE</p>
+    </div>
+    
   )
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css'; //Here comes my styling
+import './App.scss'; //Here comes my styling
 import {DISHES} from './shared/dishes'; //Here is my data
 //And then comes my components to UI:
 import Menu from './components/MenuComponent'; 
@@ -15,11 +15,11 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
-        <div className='nav'>
+      <div className='App'>
+        <div className='navApp'>
           <Navbar/>
         </div>
-        <div>
+        <div className='menuApp'>
          <Menu dishes={this.state.dishes} />
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Card, CardImg, CardImgOverlay, CardTitle } from 'reactstrap';
-import '../App.css'
+import '../App.scss'
 import DishDetail from './DishdetailComponent ';
 
 class Menu extends Component {
@@ -43,11 +43,11 @@ class Menu extends Component {
         });
 
         return (
-          <div>
-            <div className='menuPart'>
+          <div className='Menu'>
+            <div className='menuFirstPart'>
               {menu}
             </div>
-            <div>
+            <div className='menuSecondPart'>
               {this.renderDish(this.state.selectedDish)}
             </div>
           </div>
