@@ -1,24 +1,60 @@
-.wrapper {
+@import "./scss/reset", "./scss/variables";
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap");
+
+.App {
+    background-color: $generalBgColor;
+    font-family: "Amatic SC", cursive;
+    color: rgb(241, 234, 224);
+    font-size: larger;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-.menuFirstPart {
-    background-color: rgb(142, 44, 44);
-    flex:2;
-    text-align: center;
-    color: aliceblue;
-}
-.onClickPart{
-    background-color: rgb(142, 44, 44);
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-   
-}
-.navApp{
-   background: gray;
-   text-align: center;
-   color: azure;
+    flex-direction: column;
+
+    .menuApp {
+        .Menu{
+            .menuFirstContainer{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+
+                img {
+                    width: 500px;
+                    height: 400px;
+                    object-fit: cover;
+
+                    &:hover {
+                    cursor: pointer;
+                    opacity: 0.5;
+                      }
+                  }
+            }
+            .menuSecondContainer{
+                .onClickPart{
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-evenly;
+                    padding-top: 10px;
+                    border: 1px sandybrown solid;
+                    border-radius: 7px;
+    
+                    img {
+                        width: 450px;
+                        height: 350px;
+                        object-fit: cover;
+                      }
+                    .onClickCardsL{
+                        border: 2px salmon solid;
+                        border-radius: 5px;
+                        text-align: center;
+                        background-color:black;
+                    }
+                    .onClickCardsR{
+                        border: 2px salmon solid;
+                        border-radius: 5px;
+                        text-align: center;
+                        background-color:black;
+                    }
+                }
+            }
+        }
+    }
 }

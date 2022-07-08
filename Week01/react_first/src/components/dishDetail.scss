@@ -1,0 +1,8 @@
+@import '../scss/reset', '../scss/variables';
+
+.onClickPart{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    background-color: $generalBgColor;
+}

@@ -1,31 +1,29 @@
-import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 import '../App.scss'
 
 const DishDetail = ({dish})=>{
   //Here i can also use it like "props" then use it like "props.dish".
   return (
-    <div className='onClickPart wrapper'>
-    <Card style={{ width: '25rem', border: "solid" }}>
-      <CardImg width="100%" variant="top" src={dish.image} alt={dish.name} />
-      <CardBody>
-        <CardTitle>{dish.name}</CardTitle>
-        <CardText>{dish.description}</CardText>
-      </CardBody>
-    </Card>
+    <div className='onClickPart'>
+      <div className='onClickCardsL'>
+        <img src={dish.image} alt={dish.name} />
+        <div className='onClickCardsLTitle'>{dish.name}</div>
+        <div className='onClickCardsLText'>{dish.description}</div>
+      </div>
 
-    <Card style={{ width: '25rem', border: "solid" }}>
-      <CardBody>
-        <CardTitle>Comments</CardTitle>
-        <CardText><ul>
-        {dish.comments.map((person)=>(
-          <p key={person.id}>
-          {person.comment}<br/>
-          --{person.author}, {`${new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit' }).format(new Date(Date.parse(person.date)))}`}
-          </p>
-        ))}
-        </ul></CardText>
-      </CardBody>
-    </Card>
+      <div className='onClickCardsR'>
+          <div className='onClickCardsRTitle'>COMMENTS</div>
+          <br></br>
+          <div className='onClickCardsLList'>
+            <ul>
+              {dish.comments.map((person)=>(
+                <p key={person.id}>
+                <br/>{person.comment}<br/><br/>
+                --{person.author}, {`${new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit' }).format(new Date(Date.parse(person.date)))}`}
+                </p>
+              ))}
+            </ul>
+          </div>
+      </div>
     </div>
   );
 }

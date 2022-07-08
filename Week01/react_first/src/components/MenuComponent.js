@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Card, CardImg, CardImgOverlay, CardTitle } from 'reactstrap';
 import '../App.scss'
 import DishDetail from './DishdetailComponent ';
 
@@ -31,23 +30,21 @@ class Menu extends Component {
     render() {
         const menu = this.props.dishes.map((dish) => {
             return (
-              <div key={dish.id}>
-                <Card onClick={() => this.onDishSelect(dish) }>
-                    <CardImg width="50%" src={dish.image} alt={dish.name} />
-                    <CardImgOverlay>
-                    <CardTitle>{dish.name}</CardTitle>
-                  </CardImgOverlay>
-                </Card>
+              <div key={dish.id} className="Cards">
+                <div className="menuCards" onClick={() => this.onDishSelect(dish) }>
+                    <div className='menuCardstitle'>{dish.name}</div>
+                    <img src={dish.image} alt={dish.name} />
+                </div>
               </div>
             );
         });
 
         return (
           <div className='Menu'>
-            <div className='menuFirstPart'>
+            <div className='menuFirstContainer'>
               {menu}
             </div>
-            <div className='menuSecondPart'>
+            <div className='menuSecondContainer'>
               {this.renderDish(this.state.selectedDish)}
             </div>
           </div>
