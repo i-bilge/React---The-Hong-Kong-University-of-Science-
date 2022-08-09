@@ -1,0 +1,53 @@
+@import "./scss/reset", "./scss/variables";
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap");
+
+.App {
+  background-color: $generalBgColor;
+  font-family: "Amatic SC", cursive;
+  color: rgb(241, 234, 224);
+  font-size: larger;
+  display: flex;
+  flex-direction: column;
+
+  .Navbar {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: $specialBgColor;
+    color: azure;
+    text-align: center;
+    a {
+        color: white;
+        font-size: 2rem;
+        text-decoration: none;
+        font-weight: bold;
+        &:hover {
+          background-color: $generalBgColor;
+        //   color: $specialBgColor;
+        }
+  }
+  }
+
+  .menu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    .menuCards{
+      margin: 5px;
+      padding: 5px;
+      border: solid black;
+      border-radius: 10px;
+      img{
+        width: 400px;
+        height: 300px;
+        object-fit: cover;
+
+        &:hover {
+        cursor: pointer;
+        opacity: 0.5;
+          }
+      }
+    }
+  }
+}
+
+
